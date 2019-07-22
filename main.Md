@@ -14,6 +14,7 @@ This document is written as a manual to all on the Business Operations team to h
 * Use snake case when naming variables and CTEs 
 
    **GOOD**: `SELECT COUNT(o.id) AS total_orders`
+   
    **BAD**: `SELECT COUNT(o.id) AS allorders`
    
 * Refrain from using single letter variable names for CTEs
@@ -21,8 +22,11 @@ This document is written as a manual to all on the Business Operations team to h
 ## Comments
 
 * All comments should have a space after the respective comment sytax 
+
    **GOOD**: `-- This is a good comment`
+   
    **BAD**: `--dont comment like this`
+   
 * Comments above the _actual query_ should consist of the multi line commenting (`/* This kind of comment */`)
 * Comments above _CTEs and select_ statements should consist of the double hyphen (`-- This kind of comment`)
 * When hard coding numbers in, include a comment explaining the reason for the number (ie. metro_ids or date ranges)
