@@ -1,8 +1,8 @@
 # Purpose
 
-Maintaining a reproducable and consistent style will allow all users understand and debug each other's code with ease. Though postgresql is very flexible in it's styling, creating a common style will allow teams to learn quickly what other's queries are doing. 
+Maintaining a reproducible and consistent style will allow all users understand and debug each other's code with ease. Though postgresql is very flexible in it's styling, creating a common style will allow teams to learn quickly what other's queries are doing. 
 
-This document is written as a manual to all on the Business Operations team to have a general source of truth and guideline but can also be used company wide for anyone wanting write clean queries.
+This document is written as a manual to all on the Business Operations team to have a general source of truth and guidelines but can also be used company wide for anyone wanting to write clean queries.
 
 
 # Rules
@@ -67,7 +67,7 @@ SELECT
    FROM
      orders
     ```
-* Aggregate functions should always be relabled (`COUNT(id) AS total_orders`)
+* Aggregate functions should always be relabeled (`COUNT(id) AS total_orders`)
 * Using the `distinct` and `distinct on (...)` should be on the same line as the select statement
 * `SELECT` statements go on their own line
 * Creating a select statement within a join goes by the same rules as initial select statements
@@ -92,7 +92,7 @@ SELECT
 ## Calculations
 
 * Aggregations should stay as one line 
-* Calculations should stay as one line with spaces inside parenthesis
+* Calculations should stay as one line with spaces inside parentheses
 `(o.delivered_at >= (ts.starts_at + INTERVAL '1 hour'))`
 * 
 
