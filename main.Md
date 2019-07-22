@@ -127,5 +127,36 @@ WITH late_orders AS
 * This one is up for debate but the general consencious seems to keep this on one line 
 * Remember this is a form of aggregation that will need to be relabled 
 
-`row_number() over(partition by x order by y,z) AS order_counts`
+`ROW_NUMBER() OVER (PARTITION BY x ORDER BY y,z) AS order_counts`
 
+## Order by and group by
+
+* Order by and group by should be on each individual line an should be indented to their respective SELECT and FROM statements
+* To call order by and group by use numbers relative to the respective row
+```
+...
+FROM 
+  orders
+GROUP BY 1,2,5 
+ORDER BY 3 DESC
+```
+* Refrain from using ASC unless completely necessary 
+
+## Time zones
+
+```
+   CASE WHEN timezone_name = 'Eastern Time (US & Canada)' THEN 'America/New_York'
+        WHEN timezone_name = 'Central Time (US & Canada)'THEN 'America/Chicago'
+        WHEN timezone_name = 'Mountain Time (US & Canada)' THEN 'America/Denver'
+        WHEN timezone_name = 'Arizona' THEN 'America/Phoenix'
+        WHEN timezone_name = 'Pacific Time (US & Canada)' THEN 'America/Los_Angeles'
+        WHEN timezone_name = 'Alaska' THEN 'America/Anchorage'
+        WHEN timezone_name = 'Hawaii' THEN 'Pacific/Honolulu' 
+    END AS true_zone
+```
+* Refrain from using too many parenthesis
+* Postgres functionality will allow this syntax 
+
+`created_at AT TIME ZONE 'UTC' AT TIME ZONE true_zone`
+
+* The use of too many parenthesis can prove erroneous and should be avoided for debugging's sake
