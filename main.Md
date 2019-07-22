@@ -68,8 +68,8 @@ SELECT
      orders
     ```
 * Aggregate functions should always be relabeled (`COUNT(id) AS total_orders`)
-* Using the `distinct` and `distinct on (...)` should be on the same line as the select statement
 * `SELECT` statements go on their own line
+* Using the `DISTINCT` and `DISTINCT ON (...)` should be on the same line as the select statement
 * Creating a select statement within a join goes by the same rules as initial select statements
 
 ## Joins
