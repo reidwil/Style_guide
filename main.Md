@@ -1,6 +1,6 @@
 # Purpose
 
-Maintaining a reproducible and consistent style will allow all users understand and debug each other's code with ease. Though postgresql is very flexible in it's styling, creating a common style will allow teams to learn quickly what other's queries are doing. 
+Maintaining a reproducible and consistent style will allow all users understand and debug each other's code with ease. Though postgresql is very flexible in its styling, creating a common style will allow teams to learn quickly what other's queries are doing. 
 
 This document is written as a manual to all on the Business Operations team to have a general source of truth and guidelines but can also be used company wide for anyone wanting to write clean queries.
 
@@ -33,7 +33,7 @@ SELECT
       orders AS o
 ```
       
-
+=====
 ## Comments
 
 * All comments should have a space after the respective comment sytax 
