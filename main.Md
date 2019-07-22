@@ -47,9 +47,11 @@ This document is written as a manual to all on the Business Operations team to h
 * When pulling multiple columns, the comma should come prior to the next column pulled 
    ```
    SELECT 
-        id
-        ,metro_id
-      FROM 
-        orders
+     id,
+     metro_id
+   FROM 
+     orders
     ```
-*     
+* Aggregate functions should always be relabled (`COUNT(id) AS total_orders`)
+* Using the `distinct` and `distinct on (...)` should be on the same line as the select statement
+
