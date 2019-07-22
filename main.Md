@@ -17,7 +17,20 @@ This document is written as a manual to all on the Business Operations team to h
    
    **BAD**: `SELECT COUNT(o.id) AS allorders`
    
-* Refrain from using single letter variable names for CTEs
+* When opening up a new parenthesis, the initial call goes two spaces in from where the parenthesis starts
+```SELECT 
+     o.id,
+     exists(
+             SELECT 
+               1
+             FROM 
+               drivers AS d
+             WHERE d.id = o.driver_id
+            ) AS valid_drivers
+    FROM 
+      orders AS o
+```
+      
 
 ## Comments
 
@@ -54,4 +67,24 @@ This document is written as a manual to all on the Business Operations team to h
     ```
 * Aggregate functions should always be relabled (`COUNT(id) AS total_orders`)
 * Using the `distinct` and `distinct on (...)` should be on the same line as the select statement
+* `SELECT` statements go on their own line
+* Creating a select statement within a join goes by the same rules as initial select statements
+
+## Joins
+
+* Explicitly use `INNER JOIN` instead of `JOIN` for others' readability and debugging
+* Always alias tables when joining 
+   - Consider and practice relabeling something unique but also indicative of the table being aliased
+   - `INNER JOIN time_slots AS ts ON ts.id = o.time_slot_id`
+* Joins stay on one line unless creating a unique table to join - that would create the same style as a select statement
+  ```
+  LEFT JOIN (
+             SELECT 
+               id,
+               name
+             FROM 
+               metros
+             ) AS m ON m.id = o.metro_id
+  ```
+* 
 
