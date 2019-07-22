@@ -29,7 +29,8 @@ This document is written as a manual to all on the Business Operations team to h
 ##`SELECT` statement
 
 * If using comments, they need to be above the select statement
-   ```-- This is pulling all orders for Birmingham
+   ```
+   -- This is pulling all orders for Birmingham
    SELECT 
      *
    FROM 
