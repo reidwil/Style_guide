@@ -126,5 +126,5 @@ WITH late_orders AS
 
 * This one is up for debate but the general consencious seems to keep this on one line 
 * Remember this is a form of aggregation that will need to be relabled 
-`row_number() over(partition by x order by y,z) AS order_counts`
+   `row_number() over(partition by x order by y,z) AS order_counts`
 
