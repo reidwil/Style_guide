@@ -22,16 +22,16 @@ This document is written as a manual to all on the Business Operations team to h
 * When opening up a new parenthesis, the initial call goes two spaces in from where the parenthesis starts
 ```
 SELECT 
-     o.id,
-     exists(
-             SELECT
-               1
-             FROM
-               drivers AS d
-             WHERE d.id = o.driver_id
-            ) AS valid_drivers
-    FROM
-      orders AS o
+  o.id,
+  exists(
+         SELECT
+           1
+         FROM
+           drivers AS d
+         WHERE d.id = o.driver_id
+         ) AS valid_drivers
+FROM
+  orders AS o
 ```
       
 
