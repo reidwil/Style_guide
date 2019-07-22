@@ -33,7 +33,7 @@ SELECT
       orders AS o
 ```
       
-=====
+
 ## Comments
 
 * All comments should have a space after the respective comment sytax 
