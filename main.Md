@@ -11,12 +11,13 @@ This document is written as a manual to all on the Business Operations team to h
 * Capitalize SQL keywords (`SELECT` or `WHERE`)
 * No trailing whitespaces
 * No tabs - instead 2 spaces should be used to indent (example in **SELECT** section)
-* When relabeling a variable always use the `as` call
+* Refrain from using "" when naming variables
+* When relabeling a variable always use the `AS` call
 * Use snake case when naming variables and CTEs 
 
    **GOOD**: `SELECT COUNT(o.id) AS total_orders`
    
-   **BAD**: `SELECT COUNT(o.id) AS allorders`
+   **BAD**:  `SELECT COUNT(o.id) AS allorders`
    
 * When opening up a new parenthesis, the initial call goes two spaces in from where the parenthesis starts
 ```
