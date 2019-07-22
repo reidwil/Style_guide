@@ -93,6 +93,38 @@ SELECT
 
 * Aggregations should stay as one line 
 * Calculations should stay as one line with spaces inside parentheses
-`(o.delivered_at >= (ts.starts_at + INTERVAL '1 hour'))`
-* 
+   `(o.delivered_at >= (ts.starts_at + INTERVAL '1 hour'))`
+
+## Case when
+
+* Case when statements should be aligned by the `WHEN`
+```
+CASE WHEN 1 THEN 'one'
+     WHEN 2 THEN 'two'
+     WHEN 3 THEN 'three'
+     ELSE 'no number'
+END AS number_to_text
+```
+
+## CTEs
+
+* The innards of a CTE should be indented once (2 spaces) from the relative indention outside of it
+* The opening parenthesis should be on its own line parallel to the beginning of the CTE call
+* The closing parenthesis should be parallel to the opening parenthesis
+* The comma after the closing of the CTE should be on the line as the closing parenthesis
+```
+WITH late_orders AS 
+(
+  SELECT
+    late_orders
+  FROM 
+    my_late_orders_table
+ ),
+```
+
+## Window functions
+
+* This one is up for debate but the general consencious seems to keep this on one line 
+* Remember this is a form of aggregation that will need to be relabled 
+`row_number() over(partition by x order by y,z) AS order_counts`
 
