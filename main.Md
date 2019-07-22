@@ -4,6 +4,7 @@ Maintaining a reproducable and consistent style will allow all users understand 
 
 This document is written as a manual to all on the Business Operations team to have a general source of truth and guideline but can also be used company wide for anyone wanting write clean queries.
 
+
 # Rules
 ## General stuff
 
@@ -18,16 +19,17 @@ This document is written as a manual to all on the Business Operations team to h
    **BAD**: `SELECT COUNT(o.id) AS allorders`
    
 * When opening up a new parenthesis, the initial call goes two spaces in from where the parenthesis starts
-```SELECT 
+```
+SELECT 
      o.id,
      exists(
-             SELECT 
+             SELECT
                1
-             FROM 
+             FROM
                drivers AS d
              WHERE d.id = o.driver_id
             ) AS valid_drivers
-    FROM 
+    FROM
       orders AS o
 ```
       
@@ -50,19 +52,19 @@ This document is written as a manual to all on the Business Operations team to h
 * If using comments, they need to be above the select statement
    ```
    -- This is pulling all orders for Birmingham
-   SELECT 
+   SELECT
      *
-   FROM 
+   FROM
      orders
-   WHERE 
+   WHERE
      metro_id = 1
      ```
 * When pulling multiple columns, the comma should come prior to the next column pulled 
    ```
-   SELECT 
+   SELECT
      id,
      metro_id
-   FROM 
+   FROM
      orders
     ```
 * Aggregate functions should always be relabled (`COUNT(id) AS total_orders`)
@@ -76,15 +78,21 @@ This document is written as a manual to all on the Business Operations team to h
 * Always alias tables when joining 
    - Consider and practice relabeling something unique but also indicative of the table being aliased
    - `INNER JOIN time_slots AS ts ON ts.id = o.time_slot_id`
-* Joins stay on one line unless creating a unique table to join - that would create the same style as a select statement
+* Joins stay on one line unless creating a unique table to join - that would follow the same style as a select statement
   ```
   LEFT JOIN (
-             SELECT 
+             SELECT
                id,
                name
-             FROM 
+             FROM
                metros
              ) AS m ON m.id = o.metro_id
   ```
+
+## Calculations
+
+* Aggregations should stay as one line 
+* Calculations should stay as one line with spaces inside parenthesis
+`(o.delivered_at >= (ts.starts_at + INTERVAL '1 hour'))`
 * 
 
