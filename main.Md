@@ -35,9 +35,11 @@ This document is written as a manual to all on the Business Operations team to h
    FROM 
      orders
    WHERE 
-     metro_id = 1```
+     metro_id = 1
+     ```
 * When pulling multiple columns, the comma should come prior to the next column pulled 
-   ```SELECT 
+   ```
+   SELECT 
         id
         ,metro_id
       FROM 
