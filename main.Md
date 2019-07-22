@@ -47,7 +47,7 @@ SELECT
 * When hard coding numbers in, include a comment explaining the reason for the number (ie. metro_ids or date ranges)
 
 
-## `SELECT` statement
+## Select statement
 
 * If using comments, they need to be above the select statement
    ```
@@ -145,18 +145,23 @@ ORDER BY 3 DESC
 ## Time zones
 
 ```
-   CASE WHEN timezone_name = 'Eastern Time (US & Canada)' THEN 'America/New_York'
-        WHEN timezone_name = 'Central Time (US & Canada)'THEN 'America/Chicago'
-        WHEN timezone_name = 'Mountain Time (US & Canada)' THEN 'America/Denver'
-        WHEN timezone_name = 'Arizona' THEN 'America/Phoenix'
-        WHEN timezone_name = 'Pacific Time (US & Canada)' THEN 'America/Los_Angeles'
-        WHEN timezone_name = 'Alaska' THEN 'America/Anchorage'
-        WHEN timezone_name = 'Hawaii' THEN 'Pacific/Honolulu' 
-    END AS true_zone
+   SELECT
+     CASE WHEN timezone_name = 'Eastern Time (US & Canada)' THEN 'America/New_York'
+          WHEN timezone_name = 'Central Time (US & Canada)'THEN 'America/Chicago'
+          WHEN timezone_name = 'Mountain Time (US & Canada)' THEN 'America/Denver'
+          WHEN timezone_name = 'Arizona' THEN 'America/Phoenix'
+          WHEN timezone_name = 'Pacific Time (US & Canada)' THEN 'America/Los_Angeles'
+          WHEN timezone_name = 'Alaska' THEN 'America/Anchorage'
+          WHEN timezone_name = 'Hawaii' THEN 'Pacific/Honolulu' 
+      END AS true_zone
+    FROM
+      metros
 ```
 * Refrain from using too many parenthesis
-* Postgres functionality will allow this syntax 
+* Postgres functionality will allow this syntax:
 
 `created_at AT TIME ZONE 'UTC' AT TIME ZONE true_zone`
 
 * The use of too many parenthesis can prove erroneous and should be avoided for debugging's sake
+
+
