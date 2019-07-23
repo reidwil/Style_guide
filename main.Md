@@ -8,11 +8,16 @@ This document is written as a manual to all on the Business Operations team to h
 # Rules
 ## General stuff
 
-* Seeing as no one on the team capitalizes keywords we are doing with no capitalization for key words (ex. select, from, where)
+* SQL calls should be either all capital or all lowercase
+
+**Good**: `select`, `SELECT`
+
+**BAD**: `Select`, `SeLeCt spongebob_mock` 
+
 * No trailing whitespaces
-* No tabs - instead 2 spaces should be used to indent (example in **select** section)
+* No tabs - instead 2 spaces should be used to indent
 * Refrain from using "" when naming variables
-* When relabeling a variable always use the `AS` call
+* When relabeling a variable always use the `as` call
 * Commas should precede the next line's column call
 * Use snake case when naming variables and CTEs 
 
@@ -20,7 +25,9 @@ This document is written as a manual to all on the Business Operations team to h
    
    **BAD**:  `select count(o.id) as allorders`
    
-* When opening up a new parenthesis, the initial call goes two spaces in from where the parenthesis starts
+* When opening up a new parenthesis, the initial select call should align with the opening parenthesis
+* The closing line should be on its on own line 
+* The alias should be on the same line as the closing parenthesis
 ```
 select 
   o.id
@@ -159,7 +166,6 @@ order by 3 desc
     from
       metros
 ```
-* Refrain from using too many parenthesis
 * Postgres functionality will allow this syntax:
 
 `created_at at time zone 'UTC' at time zone true_zone`
