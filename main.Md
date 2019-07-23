@@ -10,9 +10,9 @@ This document is written as a manual to all on the Business Operations team to h
 
 * SQL calls should be either all capital or all lowercase
 
-**Good**: `select`, `SELECT`
+   **Good**: `select`, `SELECT`
 
-**BAD**: `Select`, `SeLeCt spongebob_mock` 
+   **BAD**: `Select`, `SeLeCt spongebob_mock` 
 
 * No trailing whitespaces
 * No tabs - instead 2 spaces should be used to indent
