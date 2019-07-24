@@ -54,6 +54,7 @@ from
 * Comments above the _actual query_ should consist of the multi line commenting (`/* This kind of comment */`)
 * Comments above _CTEs and select_ statements should consist of the double hyphen (`-- This kind of comment`)
 * When hard coding numbers in, include a comment explaining the reason for the number (ie. metro_ids or date ranges)
+* Adhere to general grammatical principals when commenting
 
 
 ## Select statement
