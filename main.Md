@@ -102,7 +102,7 @@ from
 ## Calculations
 
 * Aggregations should stay as one line 
-* Calculations should stay as one line with spaces inside parentheses
+* Calculations should stay as one line with spaces between each operator
    `(o.delivered_at >= (ts.starts_at + interval '1 hour'))`
 
 ## Case when
