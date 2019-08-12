@@ -1,4 +1,4 @@
-```# Shopper Velocity Measure
+# Shopper Velocity Measure
 
 # Purpose: 
 
@@ -24,4 +24,4 @@ To have a tracking measure for each shopper on a week to week basis both over th
 * `velocity_7` - `(rolling_7 - weekly_avg) / weekly_avg` - the percent change of current week's rolling_7 average compared to previous week's rolling_7 average
 
 * `velocity_3` - `(rolling_3 - weekly_avg) / weekly_avg` - the percent change of current week's rolling_3 average compared to previous week's rolling_3 average
-```
+
