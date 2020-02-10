@@ -28,7 +28,7 @@ This document is written as a manual to all on the Business Operations team to h
 * When opening up a new parenthesis, the initial select call should align with the opening parenthesis
 * The closing line should be on its on own line 
 * The alias should be on the same line as the closing parenthesis
-```
+```SQL
 select 
   o.id
   ,exists(
@@ -60,7 +60,7 @@ from
 ## Select statement
 
 * If using comments, they need to be above the select statement
-   ```
+   ```SQL
    -- This is pulling all orders for Birmingham
    select
      *
@@ -69,8 +69,9 @@ from
    where
      metro_id = 1
      ```
+     
 * When pulling multiple columns, the comma should come prior to the next column pulled 
-   ```
+   ```SQL
    select
      id
     ,metro_id
@@ -89,7 +90,7 @@ from
    - Consider and practice relabeling something unique but also indicative of the table being aliased
    - `join time_slots as ts on ts.id = o.time_slot_id`
 * Joins stay on one line unless creating a unique table to join - that would follow the same style as a select statement
-  ```
+  ```SQL
   left join (
              select
                id
@@ -108,7 +109,7 @@ from
 ## Case when
 
 * Case when statements should be aligned by the `WHEN`
-```
+```SQL
 case when 1 then 'one'
      when 2 then 'two'
      when 3 then 'three'
@@ -122,7 +123,7 @@ end as number_to_text
 * The opening parenthesis should be on its own line parallel to the beginning of the CTE call
 * The closing parenthesis should be parallel to the opening parenthesis
 * The comma after the closing of the CTE should be on the line as the closing parenthesis
-```
+```SQL
 with late_orders as 
 (
   select
@@ -143,7 +144,7 @@ with late_orders as
 
 * Order by and group by should be on each individual line an should be indented to their respective SELECT and FROM statements
 * To call order by and group by use numbers relative to the respective row
-```
+```SQL
 ...
 from 
   orders
@@ -154,7 +155,7 @@ order by 3 desc
 
 ## Time zones
 
-```
+```SQL
    select
      case when timezone_name = 'Eastern Time (US & Canada)' then 'America/New_York'
           when timezone_name = 'Central Time (US & Canada)' then 'America/Chicago'
